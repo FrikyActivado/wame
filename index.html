@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <meta charset="UTF-8">
+  <meta name="author" content="BigB">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.body{
+	width:100vw;
+    height:100vh;
+	}
+	.main{
+    	
+    	margin:20px;
+    	display:flex;
+        flex-flow:column;
+        text-align:center;
+        }
+     .main * {
+     	margin-top:5px;
+        text-align:center
+     }
+</style>
+</header>
+<body>
+<div class="main">
+	<label for="num">número de telefono:</label>
+	<input type="tel" id="num" pattern="[0-9]{4}-[0-9]{4}" placeholder="8888-8888">
+	<button type="button"onclick="hacerlink()">	abrir chat.</button>
+</div>
+
+<script>
+function hacerlink(){
+	let numero=document.getElementById("num").value;
+    let link="https://api.whatsapp.com/send?phone=506"+numero;
+    window.location=link;
+}
+</script>
+</body>
+</html>
